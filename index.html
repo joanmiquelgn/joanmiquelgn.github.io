@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joan Miquel González Navarra | Astronomer & Physicist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6.5.1 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #05070a;
+            color: #e2e8f0;
+            scroll-behavior: smooth;
+        }
+        .mono { font-family: 'JetBrains Mono', monospace; }
+        .glass {
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .star-field {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #0a0f1d 0%, #05070a 100%);
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.2;
+            animation: twinkle var(--duration) infinite ease-in-out;
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.1); }
+        }
+        .profile-photo {
+            box-shadow: 0 0 30px rgba(96, 165, 250, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .section-card {
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        .section-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.3);
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Fons d'estrelles animat -->
+    <div class="star-field" id="starField"></div>
+
+    <!-- Navegació superior -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="text-xl font-bold tracking-tight gradient-text">Joan M. González Navarra</span>
+            <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-widest">
+                <a href="#profile" class="hover:text-blue-400 transition">Profile</a>
+                <a href="#research" class="hover:text-blue-400 transition">Research</a>
+                <a href="#observing" class="hover:text-blue-400 transition">Observing</a>
+                <a href="#outreach" class="hover:text-blue-400 transition">Outreach</a>
+                <a href="#skills" class="hover:text-blue-400 transition">Skills</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Secció Hero -->
+    <header class="pt-48 pb-28 px-6">
+        <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-8 md:gap-16 justify-center">
+            
+            <!-- Foto de perfil -->
+            <div class="shrink-0">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                    <img src="img/profile_photo.jpeg" alt="Joan Miquel González Navarra" onerror="this.src='https://ui-avatars.com/api/?name=Joan+Miquel&background=0D1117&color=60a5fa&size=256'" class="relative w-40 h-40 md:w-52 md:h-52 rounded-full object-cover profile-photo">
+                </div>
+            </div>
+
+            <!-- Nom i Subtítol -->
+            <div class="text-center md:text-left">
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight leading-tight">
+                    Joan Miquel <br class="hidden md:block"> <span class="gradient-text">González Navarra</span>
+                </h1>
+                <div class="text-xl md:text-2xl text-slate-400 mb-8 font-light max-w-2xl leading-relaxed">
+                    <p>Physics student at UB</p>
+                    <p>Support astronomer at Sabadell Observatory</p>
+                </div>
+                
+                <!-- Icones socials i acadèmiques -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="mailto:joanmiquelgn@gmail.com" class="p-3 glass rounded-full hover:bg-white/10 transition" title="Email">
+                        <i class="fas fa-envelope text-lg"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/joan-miquel-gonzalez-navarra" target="_blank" class="p-3 glass rounded-full hover:bg-white/10 transition" title="LinkedIn">
+                        <i class="fab fa-linkedin text-lg"></i>
+                    </a>
+                    <a href="https://x.com/astrojoanmiquel" target="_blank" class="p-3 glass rounded-full hover:bg-white/10 transition" title="X (Twitter)">
+                        <i class="fa-brands fa-x-twitter text-lg"></i>
+                    </a>
+                    <a href="https://instagram.com/astrojoanmiquel" target="_blank" class="p-3 glass rounded-full hover:bg-white/10 transition" title="Instagram">
+                        <i class="fab fa-instagram text-lg"></i>
+                    </a>
+                    <a href="https://github.com/yourusername" target="_blank" class="p-3 glass rounded-full hover:bg-white/10 transition" title="GitHub">
+                        <i class="fab fa-github text-lg"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-6 space-y-32 pb-20">
+
+        <!-- Perfil Professional -->
+        <section id="profile" class="grid md:grid-cols-3 gap-12 items-start">
+            <div class="md:col-span-2">
+                <h2 class="text-3xl font-bold mb-6 flex items-center">
+                    <span class="w-8 h-px bg-blue-500 mr-4"></span> Professional Profile
+                </h2>
+                <div class="space-y-6 text-slate-300">
+                    <p class="text-lg leading-relaxed text-justify">
+                        I am a final-year Physics student at the <span class="text-white font-semibold">University of Barcelona (UB)</span> with extensive hands-on experience in professional astronomy. I currently work as a <span class="text-blue-400 font-medium">support astronomer</span> at the Sabadell Observatory (operated by the <a href="https://www.astrosabadell.org" target="_blank" class="text-white font-bold hover:text-blue-400 transition underline decoration-blue-500/30 underline-offset-4">Sabadell Astronomical Society</a>) while conducting research for my Bachelor's Thesis (TFG) at the <a href="https://icc.ub.edu/" target="_blank" class="text-white font-bold hover:text-blue-400 transition underline decoration-blue-500/30 underline-offset-4">Institute of Cosmos Sciences (ICCUB)</a>.
+                    </p>
+                    <p class="text-lg leading-relaxed text-justify">
+                        Highly skilled in the operation of professional-grade telescopes and instrumentation, photometric and spectroscopic data analysis and reduction, and Python programming for astronomical pipelines. For several years, I have been focused on observing and analyzing light curves of pulsating variable stars and exoplanet transits.
+                    </p>
+                    <p class="text-lg leading-relaxed text-justify">
+                        As a member of several amateur research groups at the <span class="text-white font-medium">Sabadell Astronomical Society (AAS)</span>, I am deeply integrated into the local amateur community, regularly attending conventions and actively participating in international Pro-Am collaborations such as <span class="text-white font-medium">ExoClock</span> and <span class="text-white font-medium">GEOS</span>.
+                    </p>
+                </div>
+                
+                <!-- Info Tags -->
+                <div class="mt-8 flex flex-wrap gap-3 w-full">
+                    <div class="glass px-4 py-2 rounded-xl flex items-center gap-3 w-fit">
+                        <i class="fas fa-calendar-alt text-blue-400"></i>
+                        <span class="text-sm">Age: <span id="age-display" class="font-bold text-white">--</span> <span class="text-slate-400">years old</span></span>
+                    </div>
+                    <div class="glass px-4 py-2 rounded-xl flex items-center gap-3 w-fit">
+                        <i class="fas fa-map-marker-alt text-blue-400"></i>
+                        <span class="text-sm font-bold text-white">Sant Cugat del Vallès, Barcelona</span>
+                    </div>
+                    <div class="glass px-4 py-2 rounded-xl flex items-center gap-3 w-fit border-purple-500/20">
+                        <i class="fas fa-award text-purple-400"></i>
+                        <span class="text-sm font-medium text-white">Honors in Observational Astronomy course (BSc Physics)</span>
+                    </div>
+                </div>
+
+                <!-- Botó de descàrrega de CV -->
+                <div class="mt-8">
+                    <a href="CV_JoanMiquelGonzalezNavarra_Jan2026.pdf" download="CV_JoanMiquelGonzalezNavarra_2026.pdf" class="px-8 py-3 bg-gradient-to-r from-blue-600/20 to-purple-600/20 border border-white/10 rounded-xl font-bold hover:bg-white/10 transition transform inline-flex items-center gap-2">
+                        <i class="fas fa-file-pdf text-red-400"></i> Download Full CV (PDF)
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Columna lateral amb targetes -->
+            <div class="space-y-6 sticky top-24">
+                <!-- Targeta BSc -->
+                <div class="glass p-8 rounded-3xl border-blue-500/20 text-center flex flex-col justify-center">
+                    <i class="fas fa-user-graduate text-6xl mb-6 text-blue-500"></i>
+                    <h3 class="font-bold text-xl mb-1">BSc in Physics</h3>
+                    <p class="text-slate-200 text-sm font-semibold">University of Barcelona</p>
+                    <p class="text-slate-400 text-xs mt-1 italic">Fundamental Physics Track</p>
+                    <p class="text-slate-300 text-sm mt-4">Expected Graduation: June 2026</p>
+                </div>
+
+                <!-- Targeta AAS -->
+                <div class="glass p-6 rounded-3xl border-blue-500/10 text-center flex flex-col justify-center items-center">
+                    <i class="fas fa-users text-4xl mb-4 text-blue-400"></i>
+                    <p class="text-xs font-medium text-slate-400 uppercase tracking-widest mb-1">Active Member of the</p>
+                    <h3 class="font-bold text-lg text-white leading-tight">Sabadell Astronomical Society (AAS)</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recerca -->
+        <section id="research">
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-px bg-purple-500 mr-4"></span> Research Experience
+            </h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- TFG Card -->
+                <div class="glass p-8 rounded-2xl relative overflow-hidden group section-card border-purple-500/10">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <span class="text-xs font-bold text-purple-400 mb-2 block uppercase tracking-tighter">Bachelor's Thesis (TFG)</span>
+                    <h3 class="text-xl font-bold mb-4">Analysis of a recent transient</h3>
+                    <p class="text-slate-400 mb-4 text-sm text-justify">
+                        Ongoing research within the <span class="text-white font-medium">CET-3PO research group at ICCUB</span>. Performing multi-telescope photometry and spectroscopy on an interesting recent transient event.
+                    </p>
+                    <span class="inline-flex items-center text-xs text-blue-400 font-medium">
+                        <i class="fas fa-microscope text-sm mr-2"></i> ICCUB | Jan 2026 - Jun 2026 (In Progress)
+                    </span>
+                </div>
+
+                <!-- ExoClock AAS Card -->
+                <div class="glass p-8 rounded-2xl relative overflow-hidden group section-card border-blue-500/10">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl">
+                        <i class="fas fa-satellite"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 mb-2 block uppercase tracking-tighter">Exoplanet Research</span>
+                    <h3 class="text-xl font-bold mb-4">ExoClock & ESA Ariel Mission</h3>
+                    <p class="text-slate-400 mb-4 text-sm text-justify">
+                        Within the framework of the <span class="text-white font-medium">ExoClock collaboration</span>, I regularly monitor exoplanet transits to support the ephemerides for the future ESA Ariel Mission. I specialize in detecting weak transits (&lt; 2 mmag of depth) utilizing professional 1m-class telescopes, contributing to target selection and observation planning for the international network.
+                    </p>
+                    <span class="inline-flex items-center text-xs text-blue-400 font-medium">
+                        <i class="fas fa-rocket text-sm mr-2"></i> AAS | 2023 - Present
+                    </span>
+                </div>
+
+                <!-- Variable Stars AAS Card -->
+                <div class="glass p-8 rounded-2xl relative overflow-hidden group section-card border-blue-500/10 md:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 mb-2 block uppercase tracking-tighter">Variable Stars</span>
+                    <h3 class="text-xl font-bold mb-4">RR Lyrae & Blazhko Effect</h3>
+                    <p class="text-slate-400 mb-4 text-sm text-justify">
+                        Regular observations of RR Lyrae variable stars to determine light curve maxima for a long-term study of the Blazhko effect in international collaboration with <span class="text-white text-xs uppercase tracking-widest">GEOS</span>. Also conducting photometric monitoring for international campaigns submitted to the <span class="text-white">AAVSO</span> database.
+                    </p>
+                    <span class="inline-flex items-center text-xs text-blue-400 font-medium">
+                        <i class="fas fa-database text-sm mr-2"></i> AAS & AAVSO | 2022 - Present
+                    </span>
+                </div>
+
+                <!-- Internship -->
+                <div class="glass p-8 rounded-2xl relative overflow-hidden group section-card border-blue-500/10 md:col-span-2 lg:col-span-1">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition text-6xl">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <span class="text-xs font-bold text-blue-400 mb-2 block uppercase tracking-tighter">Software Development</span>
+                    <h3 class="text-xl font-bold mb-4">Fringing Correction Pipeline</h3>
+                    <p class="text-slate-400 mb-4 text-sm text-justify">
+                        Developed a Python pipeline for the Joan Oró Telescope (TJO), significantly improving photometric precision for transient research and automated data reduction.
+                    </p>
+                    <span class="inline-flex items-center text-xs text-blue-400 font-medium">
+                        <i class="fas fa-tools text-sm mr-2"></i> ICCUB | 2024
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Observació -->
+        <section id="observing">
+            <h2 class="text-3xl font-bold mb-10 flex items-center">
+                <span class="w-8 h-px bg-blue-500 mr-4"></span> Observational Experience
+            </h2>
+            
+            <div class="flex flex-wrap justify-center gap-6">
+                <!-- Telescopis superior -->
+                <div class="glass p-6 rounded-xl hover:border-blue-500/50 transition w-full md:w-[calc(33.333%-1rem)]">
+                    <h4 class="font-bold text-xl mb-2 tracking-tight">CAHA 2.2m</h4>
+                    <p class="text-sm text-slate-400 mb-4 text-justify">Calar Alto, Almería. UB Internal Program awardee.</p>
+                    <div class="text-xs font-mono text-blue-300">2 nights in situ</div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:border-blue-500/50 transition w-full md:w-[calc(33.333%-1rem)]">
+                    <h4 class="font-bold text-xl mb-2 tracking-tight">CAHA 1.23m</h4>
+                    <p class="text-sm text-slate-400 mb-4 text-justify">Professional data acquisition and instrumentation follow-up.</p>
+                    <div class="text-xs font-mono text-blue-300">Remote Operations</div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:border-blue-500/50 transition w-full md:w-[calc(33.333%-1rem)]">
+                    <h4 class="font-bold text-xl mb-2 tracking-tight">OdS-AAS 0.5m</h4>
+                    <p class="text-sm text-slate-400 mb-4 text-justify">Support astronomer at Sabadell Observatory. Nightly operation & maintenance.</p>
+                    <div class="text-xs font-mono text-blue-300">Primary Operator</div>
+                </div>
+                <!-- Telescopis inferior centrats -->
+                <div class="glass p-6 rounded-xl hover:border-blue-500/50 transition w-full md:w-[calc(33.333%-1rem)] lg:max-w-[31%]">
+                    <h4 class="font-bold text-xl mb-2 tracking-tight">IAC80 OT</h4>
+                    <p class="text-sm text-slate-400 mb-4 text-justify">Teide Observatory. High-precision photometry of exoplanet transits.</p>
+                    <div class="text-xs font-mono text-blue-300">Remote Operations</div>
+                </div>
+                <div class="glass p-6 rounded-xl hover:border-blue-500/50 transition w-full md:w-[calc(33.333%-1rem)] lg:max-w-[31%]">
+                    <h4 class="font-bold text-xl mb-2 tracking-tight">TJO OdM</h4>
+                    <p class="text-sm text-slate-400 mb-4 text-justify">Joan Oró Telescope, Montsec. Robotic monitoring of transient events.</p>
+                    <div class="text-xs font-mono text-blue-300">Data Reduction</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Divulgació i Mitjans -->
+        <section id="outreach" class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <span class="w-8 h-px bg-green-500 mr-4"></span> Outreach & Communication
+                </h2>
+                <div class="space-y-4">
+                    <div class="glass p-6 rounded-2xl">
+                        <h4 class="font-bold text-blue-400 mb-2 uppercase text-xs tracking-widest">Public Sessions</h4>
+                        <p class="text-sm text-slate-300">Regularly leading telescope observing sessions and planetarium shows for schools and the general public at <span class="text-white font-medium">Sabadell Observatory</span>.</p>
+                    </div>
+                    <div class="glass p-6 rounded-2xl border-green-500/10">
+                        <h4 class="font-bold text-green-400 mb-2 uppercase text-xs tracking-widest">Scientific Talks</h4>
+                        <p class="text-sm text-slate-300">Presenting astronomical news and research updates to society members and amateur astronomy communities.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <span class="w-8 h-px bg-red-500 mr-4"></span> Media Coverage
+                </h2>
+                <div class="bg-gradient-to-br from-red-900/20 to-orange-900/20 p-6 rounded-2xl border border-red-500/20">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-red-600 rounded-lg flex items-center justify-center font-bold text-xl text-white">TV3</div>
+                        <div>
+                            <h4 class="font-bold text-white">Interstellar Comet 3I/ATLAS</h4>
+                            <p class="text-xs text-slate-400">October 2025 | National Broadcaster</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-300 mb-6 text-justify">
+                        Featured interview regarding the recovery and observation of the first interstellar comet of 2025. One of the first observers worldwide to report post-perihelion data.
+                    </p>
+                    <span class="inline-block px-4 py-2 glass rounded-full text-xs font-bold uppercase tracking-tighter hover:bg-white/5 cursor-pointer transition">
+                        <i class="fas fa-play text-sm mr-2"></i> Watch Interview
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Habilitats -->
+        <section id="skills" class="grid md:grid-cols-2 gap-12">
+            <div>
+                <h2 class="text-3xl font-bold mb-8 flex items-center">
+                    <span class="w-8 h-px bg-green-500 mr-4"></span> Technical Skills
+                </h2>
+                <div class="space-y-6 text-sm">
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="mono">Python (AstroPy, NumPy, Pandas)</span>
+                            <span class="text-blue-400">Advanced (9.6/10)</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                            <div class="bg-blue-500 h-full w-[96%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="mono">Data Reduction (IRAF, AIJ, Pipelines)</span>
+                            <span class="text-blue-400">Advanced</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                            <div class="bg-blue-500 h-full w-[90%]"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-2">
+                            <span class="mono">Fortran & Numerical Methods</span>
+                            <span class="text-blue-400">Intermediate</span>
+                        </div>
+                        <div class="w-full bg-white/10 h-1 rounded-full overflow-hidden">
+                            <div class="bg-blue-500 h-full w-[75%]"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="glass p-8 rounded-2xl">
+                <h3 class="font-bold text-xl mb-6 flex items-center gap-2">
+                    <i class="fas fa-globe text-slate-400"></i> Languages
+                </h3>
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest mb-1">English</span>
+                        <span class="font-bold">C1 Advanced</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest mb-1">Catalan</span>
+                        <span class="font-bold">Native</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest mb-1">Spanish</span>
+                        <span class="font-bold">Native</span>
+                    </div>
+                    <div>
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest mb-1">German</span>
+                        <span class="font-bold">A1 (Certificate)</span>
+                    </div>
+                    <div class="col-span-2">
+                        <span class="block text-xs text-slate-500 uppercase tracking-widest mb-1">Esperanto</span>
+                        <span class="font-bold">Basic Competence</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- X (Twitter) Feed Section -->
+        <section id="social" class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-10 flex items-center justify-center">
+                <i class="fa-brands fa-x-twitter mr-4 text-blue-400"></i> Latest Activity on X
+            </h2>
+            <div class="glass rounded-3xl overflow-hidden p-1 border-white/5">
+                <a class="twitter-timeline" 
+                   data-height="600" 
+                   data-theme="dark" 
+                   data-chrome="transparent nofooter noborders" 
+                   data-dnt="true"
+                   href="https://twitter.com/astrojoanmiquel">
+                   Tweets by astrojoanmiquel
+                </a> 
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-16 border-t border-white/10 text-center">
+        <p class="text-slate-500 text-sm mono space-y-4">
+            <span>&copy; 2026 JOAN MIQUEL GONZÁLEZ NAVARRA</span> <br>
+            <span class="tracking-[0.5em] uppercase text-[10px] text-slate-600 block mt-4">AD ASTRA PER ASPERA</span>
+        </p>
+    </footer>
+
+    <script>
+        function updateAge() {
+            const birthDate = new Date('2002-06-03');
+            const today = new Date();
+            let age = today.getFullYear() - birthDate.getFullYear();
+            const m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            const display = document.getElementById('age-display');
+            if(display) display.innerText = age;
+        }
+
+        const starField = document.getElementById('starField');
+        const starCount = 180;
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            const size = Math.random() * 2 + 1 + 'px';
+            star.style.width = size;
+            star.style.height = size;
+            star.style.top = Math.random() * 100 + '%';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.setProperty('--duration', Math.random() * 3 + 2 + 's');
+            star.style.opacity = Math.random() * 0.4; 
+            starField.appendChild(star);
+        }
+
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.padding = '0.75rem 0';
+            } else {
+                nav.style.padding = '1rem 0';
+            }
+        });
+
+        window.onload = function() {
+            updateAge();
+            // Carregar el widget d'X manualment per assegurar la transformació
+            const script = document.createElement('script');
+            script.src = "https://platform.twitter.com/widgets.js";
+            script.async = true;
+            document.body.appendChild(script);
+        };
+    </script>
+</body>
+</html>
